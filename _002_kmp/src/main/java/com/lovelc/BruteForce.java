@@ -3,7 +3,7 @@ package com.lovelc;
 /**
  * 暴力匹配
  */
-public class ForceFor {
+public class BruteForce {
 
     public static boolean pattern(String source, String find) {
         char[] sourceChars = source.toCharArray();
