@@ -11,6 +11,12 @@ public class Node {
     public Node pre;
 
 
+    public Node(int x, int y, Node pre) {
+        this.x = x;
+        this.y = y;
+        this.pre = pre;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

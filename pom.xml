@@ -11,7 +11,7 @@
     <modules>
         <module>_001_operation_stack</module>
         <module>_002_kmp</module>
-        <module>003_queue_maze</module>
+        <module>_003_queue_maze</module>
     </modules>
 
 
