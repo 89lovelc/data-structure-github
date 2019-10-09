@@ -5,11 +5,10 @@ import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
 
-public class Test {
+public class QueueMaze {
 
 
-    static int[][] arr = {
-
+    private static int[][] arr = {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             {0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1},
             {1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1},
@@ -33,21 +32,20 @@ public class Test {
     };
 
 
-    public static void print(int arr1[][]) {            //打印地图的方法
-        for (int i = 0; i < arr1.length; i++) {
-            for (int j = 0; j < arr1[i].length; j++) {
-                if (arr1[i][j] == 1) {
+    public static void print(int[][] arr1) {            //打印地图的方法
+        for (int[] ints : arr1) {
+            for (int j = 0; j < ints.length; j++) {
+                if (ints[j] == 1) {
                     System.out.print("▇" + "\t");
-                } else if (arr1[i][j] == 3) {
+                } else if (ints[j] == 3) {
                     System.out.print("*" + "\t");
-                }  else {
+                } else {
                     System.out.print("  " + "\t");
                 }
             }
             System.out.println();
         }
     }
-
 
     public static void main(String[] args) {
         Node start = new Node(1, 0, null);
@@ -65,10 +63,10 @@ public class Test {
     }
 
 
-    static public Node findPath(Node start, Node end) {
+    private static Node findPath(Node start, Node end) {
 
         //进行放入的队列
-        Queue<Node> nodes = new LinkedList<Node>();
+        Queue<Node> nodes = new LinkedList<>();
 
         //进入队列 里面的都进行标记 标记的都是为 2
         arr[start.x][start.y] = 2;
@@ -119,9 +117,10 @@ public class Test {
 
     static private Node existNode(int x, int y, Node node) {
 
+        //判断x y所构成的节点是否合法
         if (x >= 0 && x <= 19
                 && y >= 0 && y <= 19
-                &&  arr[x][y] == 0 ) {
+                && arr[x][y] == 0) {
             arr[x][y] = 2;
             return new Node(x, y, node);
         }
