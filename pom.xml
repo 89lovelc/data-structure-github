@@ -12,7 +12,22 @@
         <module>_001_operation_stack</module>
         <module>_002_kmp</module>
         <module>_003_queue_maze</module>
+        <module>_004_stack_maze</module>
+        <module>_005_quick_sort</module>
     </modules>
 
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
